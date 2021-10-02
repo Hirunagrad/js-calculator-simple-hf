@@ -1,8 +1,8 @@
 (function(){
   
-    let screen = document.querySelector('.screen');
+  let screen = document.querySelector('.screen');
   let buttons = document.querySelectorAll('.btn');
-    let clear = document.querySelector('.btn-clear');
+  let clear = document.querySelector('.btn-clear');
   let equal = document.querySelector('.btn-equal');
   
   //retrieve data from numbers that are clicked
@@ -13,7 +13,7 @@
     })
   });
   
-       equal.addEventListener('click', function(e){
+  equal.addEventListener('click', function(e){
     if(screen.value === ''){
       screen.value = 'Please Enter a Value';
     } else {
@@ -22,8 +22,18 @@
     }
   })
   
-    clear.addEventListener('click', function(e){
+  clear.addEventListener('click', function(e){
     screen.value = '';
+  })
+  back.addEventListener('click', function(e){
+    console.log(screen.value)
+    if(screen.value)
+    {
+      let o = screen.value;
+      let d = (eval(o)/10);
+      o=Math.floor(d);
+      screen.value = o;
+    }
   })
  
 })(); 
